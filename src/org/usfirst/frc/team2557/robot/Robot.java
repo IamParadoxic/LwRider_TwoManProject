@@ -17,11 +17,10 @@ import org.usfirst.frc.team2557.robot.subsystems.ExampleSubsystem;
  */
 public class Robot extends IterativeRobot {
 
-
 	public static OI oi;
 
     Command autonomousCommand;
-    Command TankDriev;
+    Command TankDrive;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
