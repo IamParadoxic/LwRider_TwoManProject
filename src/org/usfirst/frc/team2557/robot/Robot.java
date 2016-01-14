@@ -53,7 +53,8 @@ public class Robot extends IterativeRobot {
         SS_Up = new SS_Up();
         IntakeMotorCommand = new IntakeMotorCommand();
         MotorWinchCommand = new MotorWinchCommand();
-		oi = new OI();
+		TankDrive = new TankDrive();
+        oi = new OI();
         // instantiate the command used for the autonomous period
         autonomousCommand = new AutoCommand();
     }

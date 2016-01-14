@@ -9,11 +9,13 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class MotorWinch extends Subsystem {
 	public void motorwinch(){
-		while(RobotMap.variable == false){
 			
 		
 		RobotMap.winchmotor.set(1);
-		}
+	}
+	
+	public void WinchStop(){
+		RobotMap.winchmotor.set(0);
 	}
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
