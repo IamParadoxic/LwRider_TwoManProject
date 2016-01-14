@@ -76,9 +76,9 @@ public class OI {
     //Press gamepad button 2 to activate the motor winch
     gp1B.whenPressed(new MotorWinchCommand());
 	//this will toggle 
-	gp1RB.toggleWhenPressed(new SS_Up()); //Toggles the Supershifter from high to low and vice versa
-	gp1X.toggleWhenPressed(new Intake_Down()); //Toggles the Intake Arm from up to down and vice versa
-	gp1Y.toggleWhenPressed(new Wench_Lock()); // Toggles the Winch lock mechinise to lock and unlock it
+	gp1X.toggleWhenPressed(new SS_Up()); //Toggles the Supershifter from high to low and vice versa
+	gp1LB.toggleWhenPressed(new Intake_Down()); //Toggles the Intake Arm from up to down and vice versa
+	gp1RB.toggleWhenPressed(new Wench_Lock()); // Toggles the Winch lock mechinise to lock and unlock it
     }
 }
 
