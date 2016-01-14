@@ -17,6 +17,7 @@ public class RobotMap {
 	public static CANTalon backright;
 	public static CANTalon winchmotor;
 	public static CANTalon intakemotor;
+	public static boolean variable;
 	
 	frontleft = new CANTalon(4);
 	frontright = new CANTalon(5);

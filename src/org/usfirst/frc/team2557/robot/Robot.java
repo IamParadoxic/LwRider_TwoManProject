@@ -7,6 +7,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team2557.robot.commands.ExampleCommand;
 import org.usfirst.frc.team2557.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team2557.robot.subsystems.IntakeMotorSubsystem;
+import org.usfirst.frc.team2557.robot.subsystems.MotorWinch;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -19,9 +21,13 @@ public class Robot extends IterativeRobot {
 
 
 	public static OI oi;
+	public static IntakeMotorSubsystem intakemotorsubsystem;
+	public static MotorWinch motorwinch;
 
     Command autonomousCommand;
     Command TankDriev;
+    Command IntakeMotorCommand;
+    Command MotorWinchCommand;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.

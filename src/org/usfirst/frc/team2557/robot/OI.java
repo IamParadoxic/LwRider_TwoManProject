@@ -1,5 +1,9 @@
 package org.usfirst.frc.team2557.robot;
 
+import org.usfirst.frc.team2557.robot.commands.IntakeMotorCommand;
+import org.usfirst.frc.team2557.robot.commands.MotorWinchCommand;
+import org.usfirst.frc.team2557.robot.commands.Winch;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -63,6 +67,10 @@ public class OI {
     gp2START = new JoystickButton(gamepad2, 8);
     gp2LJB = new JoystickButton(gamepad2, 9);
     gp2RJB = new JoystickButton(gamepad2, 10);
+    
+    
+    gp1A.whileHeld(new IntakeMotorCommand());
+    gp1B.whenPressed(new MotorWinchCommand());
 	
 	
 }
