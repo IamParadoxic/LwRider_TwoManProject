@@ -1,7 +1,14 @@
 package org.usfirst.frc.team2557.robot;
 
+
+import org.usfirst.frc.team2557.robot.commands.IntakeMotorCommand;
+import org.usfirst.frc.team2557.robot.commands.MotorWinchCommand;
+
+import org.usfirst.frc.team2557.robot.commands.Intake_Down;
+import org.usfirst.frc.team2557.robot.commands.SS_Up;
+import org.usfirst.frc.team2557.robot.commands.Wench_Lock;
+
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
@@ -63,8 +70,15 @@ public class OI {
     gp2START = new JoystickButton(gamepad2, 8);
     gp2LJB = new JoystickButton(gamepad2, 9);
     gp2RJB = new JoystickButton(gamepad2, 10);
-	
-	
-}
+    
+    //Hold gamepad button 1 to activate the intake motor
+    gp1A.whileHeld(new IntakeMotorCommand());
+    //Press gamepad button 2 to activate the motor winch
+    gp1B.whenPressed(new MotorWinchCommand());
+	//this will toggle 
+	gp1RB.toggleWhenPressed(new SS_Up()); //Toggles the Supershifter from high to low and vice versa
+	gp1X.toggleWhenPressed(new Intake_Down()); //Toggles the Intake Arm from up to down and vice versa
+	gp1Y.toggleWhenPressed(new Wench_Lock()); // Toggles the Winch lock mechinise to lock and unlock it
+    }
 }
 
