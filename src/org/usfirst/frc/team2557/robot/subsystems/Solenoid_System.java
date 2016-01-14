@@ -9,26 +9,26 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Solenoid_System extends Subsystem {
-
+//SS is the SuperShifter
 	public void Intake_Up(){
-		RobotMap.IntakeSol.set(Value.kReverse);
+		RobotMap.IntakeSol.set(Value.kReverse);//brings the arm up
 	}
 	public void Intake_Down(){
-		RobotMap.IntakeSol.set(Value.kForward);
+		RobotMap.IntakeSol.set(Value.kForward);//brings the arm down
 		
 	}
 	public void Wench_Lock(){
-		RobotMap.WenchSol.set(Value.kReverse);
+		RobotMap.WenchSol.set(Value.kReverse);//locks the winch
 	}
 	public void Wench_Unlock(){
-		RobotMap.WenchSol.set(Value.kForward);
+		RobotMap.WenchSol.set(Value.kForward);//unlocks the winch
 		
 	}
 	public void SS_Down(){
-		RobotMap.SuperShifterSol.set(Value.kReverse);
+		RobotMap.SuperShifterSol.set(Value.kReverse);//brings the SS down
 	}
 	public void SS_Up(){
-		RobotMap.SuperShifterSol.set(Value.kForward);
+		RobotMap.SuperShifterSol.set(Value.kForward);//Brings the SS up
 		
 	}
     public void initDefaultCommand() {

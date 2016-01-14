@@ -67,9 +67,9 @@ public class OI {
     gp2LJB = new JoystickButton(gamepad2, 9);
     gp2RJB = new JoystickButton(gamepad2, 10);
 	//this will toggle 
-	gp1A.toggleWhenPressed(new SS_Up());
-	gp1B.toggleWhenPressed(new Intake_Down());
-	gp1X.toggleWhenPressed(new Wench_Lock());
+	gp1A.toggleWhenPressed(new SS_Up()); //Toggles the Supershifter from high to low and vice versa
+	gp1B.toggleWhenPressed(new Intake_Down()); //Toggles the Intake Arm from up to down and vice versa
+	gp1X.toggleWhenPressed(new Wench_Lock()); // Toggles the Winch lock mechinise to lock and unlock it
     }
 }
 

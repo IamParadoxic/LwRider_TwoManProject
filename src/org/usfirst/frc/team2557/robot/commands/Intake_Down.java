@@ -20,7 +20,7 @@ public class Intake_Down extends Command {
 
 	    // Called repeatedly when this Command is scheduled to run
 	 protected void execute() {
-		 Robot.Solenoid_System.Intake_Down();
+		 Robot.Solenoid_System.Intake_Down(); //when toggled on
 	 }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -35,7 +35,7 @@ public class Intake_Down extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	Robot.Solenoid_System.Intake_Up();
+    	Robot.Solenoid_System.Intake_Up(); //when toggled off
 
     }
 }

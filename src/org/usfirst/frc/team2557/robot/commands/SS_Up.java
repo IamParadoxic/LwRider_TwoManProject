@@ -20,7 +20,7 @@ public class SS_Up extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.Solenoid_System.SS_Up();
+    	Robot.Solenoid_System.SS_Up(); // when toggled on
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -35,6 +35,6 @@ public class SS_Up extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-    	Robot.Solenoid_System.SS_Down();
+    	Robot.Solenoid_System.SS_Down(); //when toggled off
     }
 }
