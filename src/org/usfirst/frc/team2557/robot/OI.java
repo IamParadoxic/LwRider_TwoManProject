@@ -6,8 +6,6 @@ import org.usfirst.frc.team2557.robot.commands.MotorWinchCommand;
 import org.usfirst.frc.team2557.robot.commands.Intake_Down;
 import org.usfirst.frc.team2557.robot.commands.SS_Up;
 import org.usfirst.frc.team2557.robot.commands.Wench_Lock;
-import org.usfirst.frc.team2557.robot.commands.IntakeMotorCommand;
-import org.usfirst.frc.team2557.robot.commands.MotorWinchCommand;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -69,7 +67,6 @@ public class OI {
     gp2RB = new JoystickButton(gamepad2, 6);
     gp2BACK = new JoystickButton(gamepad2, 7);
     gp2START = new JoystickButton(gamepad2, 8);
-    
     gp2LJB = new JoystickButton(gamepad2, 9);
     gp2RJB = new JoystickButton(gamepad2, 10);
     
