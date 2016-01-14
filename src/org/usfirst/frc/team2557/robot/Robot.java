@@ -5,8 +5,12 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import org.usfirst.frc.team2557.robot.commands.ExampleCommand;
-import org.usfirst.frc.team2557.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team2557.robot.commands.*;
+import org.usfirst.frc.team2557.robot.subsystems.*;
+
+import org.usfirst.frc.team2557.robot.subsystems.IntakeMotorSubsystem;
+import org.usfirst.frc.team2557.robot.subsystems.MotorWinch;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -17,22 +21,41 @@ import org.usfirst.frc.team2557.robot.subsystems.ExampleSubsystem;
  */
 public class Robot extends IterativeRobot {
 
+
 	public static OI oi;
+	public static DriveTrain DriveTrain; //Drive train Subsystem
+	public static Solenoid_System Solenoid_System;
+	public static IntakeMotorSubsystem intakemotorsubsystem;
+	public static MotorWinch motorwinch;
+
 
     Command autonomousCommand;
-    Command TankDrive;
+    Command AutoCommand;
+    Command TankDrive; //this command is for the Drive Train
+    Command Intake_Down;
+    Command Wench_Lock;
+    Command SS_Up;
+    Command IntakeMotorCommand;
+    Command MotorWinchCommand;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
     	
+    	DriveTrain = new DriveTrain();
+    	Solenoid_System = new Solenoid_System();
+    	intakemotorsubsystem = new IntakeMotorSubsystem();
+    	motorwinch = new MotorWinch();
     	
-    	
-    	
+        Wench_Lock = new Wench_Lock();
+        Intake_Down = new Intake_Down();
+        SS_Up = new SS_Up();
+        IntakeMotorCommand = new IntakeMotorCommand();
+        MotorWinchCommand = new MotorWinchCommand();
 		oi = new OI();
         // instantiate the command used for the autonomous period
-        autonomousCommand = new ExampleCommand();
+        autonomousCommand = new AutoCommand();
     }
 	
 	public void disabledPeriodic() {
@@ -72,8 +95,9 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        TankDrive.Start();
-    }
+        TankDrive.start();
+       
+        }	
     
     /**
      * This function is called periodically during test mode
