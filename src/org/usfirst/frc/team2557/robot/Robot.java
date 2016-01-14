@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team2557.robot.commands.*;
-import org.usfirst.frc.team2557.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team2557.robot.subsystems.*;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -20,10 +20,14 @@ public class Robot extends IterativeRobot {
 
 	public static OI oi;
 	public static DriveTrain DriveTrain; //Drive train Subsystem
+	public static Solenoid_System Solenoid_System;
 
     Command autonomousCommand;
     Command AutoCommand;
     Command TankDrive; //this command is for the Drive Train
+    Command Intake_Down;
+    Command Wench_Lock;
+    Command SS_Up;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -31,7 +35,13 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
     	
     	DriveTrain = new DriveTrain();
+    	Solenoid_System = new Solenoid_System();
     	
+        Wench_Lock = new Wench_Lock();
+
+        Intake_Down = new Intake_Down();
+        SS_Up = new SS_Up();
+        
     	
 		oi = new OI();
         // instantiate the command used for the autonomous period
@@ -76,7 +86,8 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         TankDrive.start();
-    }
+       
+        }	
     
     /**
      * This function is called periodically during test mode

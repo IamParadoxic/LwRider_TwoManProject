@@ -1,5 +1,9 @@
 package org.usfirst.frc.team2557.robot;
 
+import org.usfirst.frc.team2557.robot.commands.Intake_Down;
+import org.usfirst.frc.team2557.robot.commands.SS_Up;
+import org.usfirst.frc.team2557.robot.commands.Wench_Lock;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -62,8 +66,10 @@ public class OI {
     gp2START = new JoystickButton(gamepad2, 8);
     gp2LJB = new JoystickButton(gamepad2, 9);
     gp2RJB = new JoystickButton(gamepad2, 10);
-	
-	
+	//this will toggle 
+	gp1A.toggleWhenPressed(new SS_Up());
+	gp1B.toggleWhenPressed(new Intake_Down());
+	gp1X.toggleWhenPressed(new Wench_Lock());
     }
 }
 
