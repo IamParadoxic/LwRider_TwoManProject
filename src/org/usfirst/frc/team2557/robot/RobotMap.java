@@ -19,7 +19,7 @@ public class RobotMap {
     public static CANTalon 	BackRight = new CANTalon(1);	//Port1
 	public static CANTalon 	winchmotor = new CANTalon(2);
 	public static CANTalon 	intakemotor = new CANTalon(3);
-	public static boolean variable;
+//	public static boolean variable;
 
     
 	public static DoubleSolenoid IntakeSol = new DoubleSolenoid(0, 2, 3); //Breakout 1 ports 2 and 3
