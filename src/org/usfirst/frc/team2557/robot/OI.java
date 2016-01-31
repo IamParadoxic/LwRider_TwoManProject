@@ -1,6 +1,7 @@
 package org.usfirst.frc.team2557.robot;
 
 
+import org.usfirst.frc.team2557.robot.commands.GyroWinch;
 import org.usfirst.frc.team2557.robot.commands.IntakeMotorCommand;
 import org.usfirst.frc.team2557.robot.commands.MotorWinchCommand;
 
@@ -74,7 +75,7 @@ public class OI {
     //Hold gamepad button 1 to activate the intake motor
     gp1A.whileHeld(new IntakeMotorCommand());
     //Press gamepad button 2 to activate the motor winch
-    gp1LB.whileHeld(new MotorWinchCommand());
+    gp1LB.toggleWhenPressed(new GyroWinch());
 	//this will toggle 
 	gp1X.toggleWhenPressed(new SS_Up()); //Toggles the Supershifter from high to low and vice versa
 	gp1B.toggleWhenPressed(new Intake_Down()); //Toggles the Intake Arm from up to down and vice versa

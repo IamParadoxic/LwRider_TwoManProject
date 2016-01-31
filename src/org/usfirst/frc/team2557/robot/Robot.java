@@ -5,6 +5,9 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc.team2557.robot.commands.*;
 import org.usfirst.frc.team2557.robot.subsystems.*;
 
@@ -37,6 +40,13 @@ public class Robot extends IterativeRobot {
     Command SS_Up;
     Command IntakeMotorCommand;
     Command MotorWinchCommand;
+    Command GWinch;
+    
+    
+    
+    
+    
+    SendableChooser chooser;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -54,17 +64,35 @@ public class Robot extends IterativeRobot {
         IntakeMotorCommand = new IntakeMotorCommand();
         MotorWinchCommand = new MotorWinchCommand();
 		TankDrive = new TankDrive();
-        oi = new OI();
-        // instantiate the command used for the autonomous period
-        autonomousCommand = new AutoCommand();
+		GWinch = new GyroWinch();
+		
+		
+		oi = new OI();
+        chooser = new SendableChooser();
+        chooser.addDefault("Default Auto", new AutoCommand());
+//        chooser.addObject("My Auto", new MyAutoCommand());
+        SmartDashboard.putData("Auto mode", chooser);
     }
 	
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
 	}
 
-    public void autonomousInit() {
-        // schedule the autonomous command (example)
+	public void autonomousInit() {
+        autonomousCommand = (Command) chooser.getSelected();
+        
+		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
+		switch(autoSelected) {
+		case "My Auto":
+			autonomousCommand = new MyAutoCommand();
+			break;
+		case "Default Auto":
+		default:
+			autonomousCommand = new ExampleCommand();
+			break;
+		} */
+    	
+    	// schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
     }
 
@@ -97,7 +125,7 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         TankDrive.start();
-       
+       SmartDashboard.putNumber("The gyo Value si ", RobotMap.GWinch.getAngle());
         }	
     
     /**
