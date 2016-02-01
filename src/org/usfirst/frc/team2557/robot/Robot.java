@@ -39,7 +39,6 @@ public class Robot extends IterativeRobot {
     Command Wench_Lock;
     Command SS_Up;
     Command IntakeMotorCommand;
-    Command MotorWinchCommand;
     Command GWinch;
     
     
@@ -62,7 +61,6 @@ public class Robot extends IterativeRobot {
         Intake_Down = new Intake_Down();
         SS_Up = new SS_Up();
         IntakeMotorCommand = new IntakeMotorCommand();
-        MotorWinchCommand = new MotorWinchCommand();
 		TankDrive = new TankDrive();
 		GWinch = new GyroWinch();
 		

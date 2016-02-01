@@ -3,8 +3,6 @@ package org.usfirst.frc.team2557.robot;
 
 import org.usfirst.frc.team2557.robot.commands.GyroWinch;
 import org.usfirst.frc.team2557.robot.commands.IntakeMotorCommand;
-import org.usfirst.frc.team2557.robot.commands.MotorWinchCommand;
-
 import org.usfirst.frc.team2557.robot.commands.Intake_Down;
 import org.usfirst.frc.team2557.robot.commands.SS_Up;
 import org.usfirst.frc.team2557.robot.commands.Wench_Lock;
